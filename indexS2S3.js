@@ -102,7 +102,6 @@ http.createServer(function (req, res) {
                 parametros = [datos.numero_cuenta,
                     datos.nombre,
                     datos.apelido,
-                    datos.numero_cuenta
                 ];
                 break;
 
