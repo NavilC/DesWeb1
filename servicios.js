@@ -3,10 +3,13 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
+//app.get('/api/:tabla', (req, res)=> )
+//let sql = "select * form req.params.tabla"
 
 // CRUD PARA CLIENTES
 //para seleccionar los clientes
 app.get('/api/cliente/', (req, res) => {
+
 
     let con = mysql.createConnection({
         host: 'localhost',
@@ -15,7 +18,7 @@ app.get('/api/cliente/', (req, res) => {
         database: 'servicios'
         
     });
-
+    //let sql = "select * form req.params.tabla"
     let sql = "select * from tbl_cliente";
 
     con.connect(function (err) {
