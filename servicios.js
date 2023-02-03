@@ -773,7 +773,4 @@ app.delete('/api/relaciones/:id', (req, res)=>{
             }
         });              
 });
-
-
-
 app.listen(3000);
