@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src=" https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <title>Examen1 DW1</title>
+</head>
+
+<body>
+    <style>
+        div.card {
+            width: 300px;
+            height: auto;
+            margin: 15px;
+            padding: 3%;
+        }
+    </style>
+    <style>
+        button {
+            width: auto;
+            height: auto;
+            margin: 15px;
+        }
+    </style>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarCliente(event)">
+            <div class="form-group">
+                <div class="form-group">
+                    <h3>Cliente</h3>
+                    <label>id</label>
+                    <input type="number" class="form-control" name="id_cliente" placeholder="1">
+                </div>
+                <label>Nombre del Cliente</label>
+                <input type="text" class="form-control" name="cliente" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>DNI del Cliente</label>
+                <input type="text" class="form-control" name="dni" placeholder="0501-1999-00064">
+            </div>
+            <div class="form-group">
+                <label>Direccion del cliente</label>
+                <input type="text" class="form-control" name="direccion" placeholder="col. trejo">
+            </div>
+
+            <button type="submit" class="btn btn-primary">ingresar cliente</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="actualizarCliente()">Actualizar cliente</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarCliente()">borrar cliente</button>
+    </div>
+    <div class="card">
+        <form name="frm" onsubmit="insertarPanes(event)">
+            <h3>Panes</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_pan" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>Nombre del pan</label>
+                <input type="text" class="form-control" name="pan" placeholder="Semita">
+            </div>
+
+            <button type="submit" class="btn btn-primary">ingresar pan</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="actualizarPanes()">Actualizar pan</button>
+        <button type="submit" class="btn btn-danger" onclick="borrarPanes()">borrar pan</button>
+    </div>
+    </div>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarEmpacador(event)">
+            <h3>Empacadores</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_empacador" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>Nombre del empacador</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>DNI del empacador</label>
+                <input type="text" class="form-control" name="dni_empacador" placeholder="0501-1999-00064">
+            </div>
+            <div class="form-group">
+                <label>Edad </label>
+                <input type="number" class="form-control" name="edad_empacador" placeholder="20 años">
+            </div>
+
+            <button type="submit" class="btn btn-primary">ingresar empacador</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="actualizarEmpacador()">Actualizar Empacador</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarEmpacador ()">borrar Empacador</button>
+    </div>
+    </div>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarPanadero(event)">
+            <h3>Panaderos</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_panadero" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>Nombre del panadero</label>
+                <input type="text" class="form-control" name="nombre_panadero" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>DNI del empacador</label>
+                <input type="number" class="form-control" name="dni_panadero" placeholder="0501-1999-00064">
+            </div>
+            <button type="submit" class="btn btn-primary">ingresar panadero</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="ActualizarPanadero()">Actualizar Panadero</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarPanadero()">borrar Panadero</button>
+    </div>
+    </div>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarDelivery(event)">
+            <h3>Repartidores</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_delivery" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>Nombre del transportista</label>
+                <input type="text" class="form-control" name="nombre_transportista" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>DNI del tasnsportista</label>
+                <input type="number" class="form-control" name="dni_transportista" placeholder="0501-1999-00064">
+            </div>
+            <button type="submit" class="btn btn-primary">ingresar tasnsportista</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="ActualizarDelivery()">Actualizar repartidor</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarDelivery()">borrar Repartido</button>
+    </div>
+    </div>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarEnvios(event)">
+            <h3>Envios</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_envio" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>id del envio</label>
+                <input type="number" class="form-control" name="id_delivery" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>id del transportista</label>
+                <input type="number" class="form-control" name="id_transportista" placeholder="0501-1999-00064">
+            </div>
+            <button type="submit" class="btn btn-primary">ingresar envio</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="ActializarEnvios() ">Actualizar Pedido</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarEnvios()">borrar Pedido</button>
+    </div>
+    </div>
+
+    <div class="card">
+        <form name="frm" onsubmit="insertarpedidos(event)">
+            <h3>pedidos</h3>
+            <div class="form-group">
+                <label>id</label>
+                <input type="number" class="form-control" name="id_pedido" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>id cliente</label>
+                <input type="number" class="form-control" name="id_cliente" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>id del panadero</label>
+                <input type="number" class="form-control" name="id_panadero" placeholder="0501-1999-00064">
+            </div>
+            <div class="form-group">
+                <label>id del pan</label>
+                <input type="number" class="form-control" name="id_pan" placeholder="Juan">
+
+            </div>
+            <div class="form-group">
+                <label>id del empacador</label>
+                <input type="number" class="form-control" name="id_empacador" placeholder="0501-1999-00064">
+            </div>
+            <div class="form-group">
+                <label>fecha de pedido</label>
+                <input type="date" class="form-control" name="fecha" placeholder="0501-1999-00064">
+            </div>
+            <button type="submit" class="btn btn-primary">ingresar envio</button>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="ActualizaPedidos()">Actualizar Pedido</button>
+        <button type="submit" class="btn btn-danger" onclick="BorrarPedidos()">borrar Pedido</button>
+    </div>
+    <div class="table-responsive">
+        <br>
+        <h3>lista de Clientes</h3>
+        <table class="table">
+            <div>
+                <thead>
+                    <tr>
+                        <th scope="col">id cliente</th>
+                        <th scope="col">nombre del cliente </th>
+                        <th scope="col">dni</th>
+                        <th scope="col">direccion</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo_tabla">
+                </tbody>
+            </div>
+
+        </table>
+        <br>
+        <h3>lista de panes</h3>
+        <table class="table">
+            <div>
+
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">id pan</th>
+                    <th scope="col">tipo de pan </th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_panes">
+            </tbody>
+        </table>
+
+        <table class="table">
+            <br>
+            <h3>lista de panadero</h3>
+            <thead>
+                <tr>
+                    <th scope="col">id panadero</th>
+                    <th scope="col">nombre del panadero </th>
+                    <th scope="col">dni del panadero </th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_panadero">
+
+            </tbody>
+        </table>
+
+        <table class="table">
+            <br>
+            <h3>lista de Empacadores</h3>
+            <thead>
+                <tr>
+                    <th scope="col">id empacador</th>
+                    <th scope="col">nombre del empacador</th>
+                    <th scope="col">dni del panadero </th>
+                    <th scope="col">edad del panadero </th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_empacador">
+
+            </tbody>
+        </table>
+
+        <table class="table">
+            <br>
+            <h3>lista de Motoristas</h3>
+            <thead>
+                <tr>
+                    <th scope="col">id delivery</th>
+                    <th scope="col">nombre del transportista</th>
+                    <th scope="col">dni del transporista</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_delivery">
+
+            </tbody>
+        </table>
+
+
+        <table class="table">
+            <br>
+            <h3>lista de pedidos por delivery</h3>
+            <thead>
+                <tr>
+                    <th scope="col">id envio</th>
+                    <th scope="col">id_pedido</th>
+                    <th scope="col">id_delivery</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_envios">
+
+            </tbody>
+        </table>
+
+        <table class="table">
+            <br>
+            <h3>lista de pedidos</h3>
+            <thead>
+                <tr>
+                    <th scope="col">id pedido</th>
+                    <th scope="col">id cliente</th>
+                    <th scope="col">id panadero</th>
+                    <th scope="col">id pan</th>
+                    <th scope="col">id empacador</th>
+                    <th scope="col">fecha de pedido</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_tabla_pedidos">
+
+            </tbody>
+        </table>
+
+        </table>
+    </div>
+
+
+
+
+</body>
+
+</html>
