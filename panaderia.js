@@ -227,7 +227,7 @@ app.put('/acaceres/api/:tabla/:id', (req, res) => {
             break;
 
         case "tbl_panes":
-            sql = "update " + req.params.tabla + " set tipo_pan = ? where id_cliente = ? ";
+            sql = "update " + req.params.tabla + " set tipo_pan = ? where id_pan = ? ";
             parametros = [req.body.tipo_pan, req.params.id];
             break;
 
