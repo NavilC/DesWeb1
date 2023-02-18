@@ -64,11 +64,15 @@
                 <label>Direccion del cliente</label>
                 <input type="text" class="form-control" name="direccion" placeholder="col. trejo">
             </div>
-
-            <button type="submit" class="btn btn-primary">ingresar cliente</button>
+            <div class="class mt-2">
+                <button type="submit" class="btn btn-primary">ingresar cliente</button>
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="actualizarCliente()">Actualizar cliente</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarCliente()">borrar cliente</button>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" onclick="actualizarCliente()">Actualizar cliente</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarCliente()">borrar cliente</button>
+    
+        </div>
     </div>
 
     <div class="card" style="display: none" id="panes">
@@ -82,11 +86,15 @@
                 <label>Nombre del pan</label>
                 <input type="text" class="form-control" name="pan" placeholder="Semita">
             </div>
-
-            <button type="submit" class="btn btn-primary">ingresar pan</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">ingresar pan</button>
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="actualizarPanes()">Actualizar pan</button>
-        <button type="submit" class="btn btn-danger" onclick="borrarPanes()">borrar pan</button>
+        <div class="class mt-2">
+            <button type="submit" class="btn btn-primary" onclick="actualizarPanes()">Actualizar pan</button>
+            <button type="submit" class="btn btn-danger" onclick="borrarPanes()">borrar pan</button>
+        </div>
+
     </div>
     </div>
 
@@ -110,11 +118,15 @@
                 <label>Edad </label>
                 <input type="number" class="form-control" name="edad_empacador" placeholder="20 años">
             </div>
-
-            <button type="submit" class="btn btn-primary">ingresar empacador</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">ingresar empacador</button>
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="actualizarEmpacador()">Actualizar Empacador</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarEmpacador ()">borrar Empacador</button>
+        <div class="class mt-2">
+            <button type="submit" class="btn btn-primary" onclick="actualizarEmpacador()">Actualizar Empacador</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarEmpacador ()">borrar Empacador</button>
+    
+        </div>
     </div>
     </div>
 
@@ -134,10 +146,15 @@
                 <label>DNI del empacador</label>
                 <input type="number" class="form-control" name="dni_panadero" placeholder="0501-1999-00064">
             </div>
+           <div class="class mt-2">
             <button type="submit" class="btn btn-primary">ingresar panadero</button>
+           </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="ActualizarPanadero()">Actualizar Panadero</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarPanadero()">borrar Panadero</button>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" onclick="ActualizarPanadero()">Actualizar Panadero</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarPanadero()">borrar Panadero</button>
+        </div>
+
     </div>
     </div>
 
@@ -157,11 +174,16 @@
                 <label>DNI del tasnsportista</label>
                 <input type="number" class="form-control" name="dni_transportista" placeholder="0501-1999-00064">
             </div>
-            <button type="submit" class="btn btn-primary">ingresar tasnsportista</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">ingresar tasnsportista</button>
+
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="ActualizarDelivery()">Actualizar repartidor</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarDelivery()">borrar Repartido</button>
-    </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" onclick="ActualizarDelivery()">Actualizar repartidor</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarDelivery()">borrar Repartido</button>
+    
+        </div>
     </div>
 
     <div class="card" style="display: none" id="envios">
@@ -180,11 +202,16 @@
                 <label>id del transportista</label>
                 <input type="number" class="form-control" name="id_transportista" placeholder="0501-1999-00064">
             </div>
-            <button type="submit" class="btn btn-primary">ingresar envio</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">ingresar envio</button>
+
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="ActializarEnvios() ">Actualizar Pedido</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarEnvios()">borrar Pedido</button>
-    </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" onclick="ActializarEnvios() ">Actualizar Pedido</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarEnvios()">borrar Pedido</button>
+    
+        </div>
     </div>
 
     <div class="card" style="display: none" id="pedidos">
@@ -192,34 +219,40 @@
             <h3>pedidos</h3>
             <div class="form-group">
                 <label>id</label>
-                <input type="number" class="form-control" name="id_pedido" placeholder="1">
+                <input type="number" class="form-control" name="id_pedido_pedido" placeholder="1">
             </div>
             <div class="form-group">
                 <label>id cliente</label>
-                <input type="number" class="form-control" name="id_cliente" placeholder="Juan">
+                <input type="number" class="form-control" name="id_cliente_pedido" placeholder="Juan">
 
             </div>
             <div class="form-group">
                 <label>id del panadero</label>
-                <input type="number" class="form-control" name="id_panadero" placeholder="4">
+                <input type="number" class="form-control" name="id_panadero_pedido" placeholder="4">
             </div>
             <div class="form-group">
                 <label>id del pan</label>
-                <input type="number" class="form-control" name="id_pan" placeholder="2">
+                <input type="number" class="form-control" name="id_pan_pedido" placeholder="2">
 
             </div>
             <div class="form-group">
                 <label>id del empacador</label>
-                <input type="number" class="form-control" name="id_empacador" placeholder="5">
+                <input type="number" class="form-control" name="id_empacador_pedido" placeholder="5">
             </div>
             <div class="form-group">
                 <label>fecha de pedido</label>
                 <input type="date" class="form-control" name="fecha" placeholder="0501-1999-00064">
             </div>
-            <button type="submit" class="btn btn-primary">ingresar envio</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">ingresar pedido</button>
+
+            </div>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="ActualizaPedidos()">Actualizar Pedido</button>
-        <button type="submit" class="btn btn-danger" onclick="BorrarPedidos()">borrar Pedido</button>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" onclick="ActualizaPedidos()">Actualizar Pedido</button>
+            <button type="submit" class="btn btn-danger" onclick="BorrarPedidos()">borrar Pedido</button>
+        </div>
+ 
     </div>
     <div id="tblcliente" class="table-responsive" style="display: block">
         <br>

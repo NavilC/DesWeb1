@@ -376,31 +376,29 @@ function BorrarEnvios() {
 
 }
 
-insertarpedidos = (e) => {
-  jQuery.ajaxSetup({
-    async: false
-  })
+
+function insertarpedidos(e){
   e.preventDefault();
-  var datosPedidos = {
-    id_cliente: $("[name = 'id_cliente']").val(),
-    id_panadero: $("[name = 'id_panadero']").val(),
-    id_pan: $("[name = 'id_pan']").val(),
-    id_empacador: $("[name = 'id_empacador']").val(),
-    fecha_pedido: $("[name = 'fecha']").val(),
-  };
+  var datos = {
+    id_cliente: $("[name = 'id_cliente_pedido']").val(),
+    id_panadero: $("[name = 'id_panadero_pedido']").val(),
+    id_pan: $("[name = 'id_pan_pedido']").val(),
+    id_empacador: $("[name = 'id_empacador_pedido']").val(),
+    fecha_pedido: $("[name = 'fecha']").val()
+  }
+  console.log(datos);
 
   $.ajax({
     type: "POST",
-    url: url + "tbl_pedidos",
-    data: JSON.stringify(datosPedidos),
-    success: function (data) {
+    url: url+"tbl_pedidos",
+    data: JSON.stringify(datos),
+    success: function(data) {
       console.log(data);
     },
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  funcionPedidos();
-};
+}
 
 function ActualizaPedidos() {
   var datosPedidos = {
