@@ -248,7 +248,7 @@ function ActualizarPanadero() {
   let id = $("[name = 'id_panadero']").val();
   $.ajax({
     type: "PUT",
-    url: url + "tbl_panadero"+"/"+id,
+    url: url + "tbl_panadero" + "/" + id,
     data: JSON.stringify(datospanadero),
     success: function (data) {
       console.log(data);
@@ -256,7 +256,7 @@ function ActualizarPanadero() {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  
+
 }
 
 function BorrarPanadero() {
@@ -264,7 +264,7 @@ function BorrarPanadero() {
 
   $.ajax({
     type: "DELETE",
-    url: url+"tbl_panadero"+"/"+id,
+    url: url + "tbl_panadero" + "/" + id,
     success: function (data) {
       console.log(data);
     },
@@ -300,7 +300,7 @@ function ActualizarDelivery() {
   let id = $("[name = 'id_delivery']").val();
   $.ajax({
     type: "PUT",
-    url: url +"tbl_delivery" +"/" +id,
+    url: url + "tbl_delivery" + "/" + id,
     data: JSON.stringify(datosdelivery),
     success: function (data) {
       console.log(data);
@@ -312,9 +312,9 @@ function ActualizarDelivery() {
 
 function BorrarDelivery() {
   let id = $("[name = 'id_delivery']").val();
-    $.ajax({
+  $.ajax({
     type: "DELETE",
-    url: url + "tbl_delivery" +"/" +id,
+    url: url + "tbl_delivery" + "/" + id,
     success: function (data) {
       console.log(data);
     },
@@ -351,7 +351,7 @@ function ActializarEnvios() {
 
   $.ajax({
     type: "PUT",
-    url: url + "tbl_envios"+"/"+id,
+    url: url + "tbl_envios" + "/" + id,
     data: JSON.stringify(datosEnvios),
     success: function (data) {
       console.log(data);
@@ -359,24 +359,27 @@ function ActializarEnvios() {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  
+
 }
 
 function BorrarEnvios() {
   let id = $("[name = 'id_envio']").val();
   $.ajax({
     type: "DELETE",
-    url: url + "tbl_envios" +"/" +id,
+    url: url + "tbl_envios" + "/" + id,
     success: function (data) {
       console.log(data);
     },
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   })
-  
+
 }
 
 insertarpedidos = (e) => {
+  jQuery.ajaxSetup({
+    async: false
+  })
   e.preventDefault();
   var datosPedidos = {
     id_cliente: $("[name = 'id_cliente']").val(),
@@ -391,12 +394,12 @@ insertarpedidos = (e) => {
     url: url + "tbl_pedidos",
     data: JSON.stringify(datosPedidos),
     success: function (data) {
-      s
       console.log(data);
     },
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
+  funcionPedidos();
 };
 
 function ActualizaPedidos() {
@@ -410,7 +413,7 @@ function ActualizaPedidos() {
   let id = $("[name = 'id_pedido']").val();
   $.ajax({
     type: "PUT",
-    url: url + "tbl_pedidos"+"/"+id,
+    url: url + "tbl_pedidos" + "/" + id,
     data: JSON.stringify(datosPedidos),
     success: function (data) {
       console.log(data);
@@ -421,10 +424,10 @@ function ActualizaPedidos() {
 }
 
 function BorrarPedidos() {
-  let id = $("[name = 'id_pedido']").val(); 
+  let id = $("[name = 'id_pedido']").val();
   $.ajax({
     type: "DELETE",
-    url: url + "tbl_pedidos"+"/"+id,
+    url: url + "tbl_pedidos" + "/" + id,
     success: function (data) {
       console.log(data);
     },
@@ -453,7 +456,7 @@ insertarEmpacador = (e) => {
   });
 };
 
-function actualizarEmpacador(){
+function actualizarEmpacador() {
   var datosempacador = {
     nombre: $("[name = 'nombre']").val(),
     dni_empacador: $("[name = 'dni_empacador']").val(),
@@ -462,7 +465,7 @@ function actualizarEmpacador(){
   let id = $("[name = 'id_empacador']").val();
   $.ajax({
     type: "PUT",
-    url: url + "tbl_empacador"+"/"+id,
+    url: url + "tbl_empacador" + "/" + id,
     data: JSON.stringify(datosempacador),
     success: function (data) {
       console.log(data);
@@ -472,12 +475,12 @@ function actualizarEmpacador(){
   });
 }
 
-function BorrarEmpacador (){
+function BorrarEmpacador() {
   let id = $("[name = 'id_empacador']").val();
   $.ajax({
     type: "DELETE",
-    url : url + "tbl_empacador"+"/"+id,
-    success: function(data){
+    url: url + "tbl_empacador" + "/" + id,
+    success: function (data) {
       console.log(data);
     },
     dataType: "json",
@@ -502,17 +505,17 @@ insertarPanes = (e) => {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  funcionPanes ();
+  funcionPanes();
 };
 
-function actualizarPanes(){
+function actualizarPanes() {
   var datospanes = {
     tipo_pan: $("[name = 'pan']").val(),
   };
   let id = $("[name = 'id_pan']").val();
   $.ajax({
     type: "PUT",
-    url: url + "tbl_panes"+"/"+id,
+    url: url + "tbl_panes" + "/" + id,
     data: JSON.stringify(datospanes),
     success: function (data) {
       console.log(data);
@@ -523,11 +526,11 @@ function actualizarPanes(){
   funcionPanes();
 }
 
-function borrarPanes(){
+function borrarPanes() {
   let id = $("[name = 'id_pan']").val();
   $.ajax({
     type: "DELETE",
-    url: url + "tbl_panes" +"/" +id,
+    url: url + "tbl_panes" + "/" + id,
     success: function (data) {
       console.log(data);
     },
@@ -538,7 +541,9 @@ function borrarPanes(){
 }
 
 insertarCliente = (e) => {
-  jQuery.ajaxSetup({async:false})
+  jQuery.ajaxSetup({
+    async: false
+  })
   e.preventDefault();
 
   //ingresar el cliente
@@ -562,7 +567,9 @@ insertarCliente = (e) => {
 };
 
 function actualizarCliente() {
-  jQuery.ajaxSetup({async:false})
+  jQuery.ajaxSetup({
+    async: false
+  })
   var datosclientes = {
     nombre_cliente: $("[name = 'cliente']").val(),
     dni: $("[name = 'dni']").val(),
@@ -573,7 +580,7 @@ function actualizarCliente() {
 
   $.ajax({
     type: "PUT",
-    url: url + "tbl_cliente" +"/" +id,
+    url: url + "tbl_cliente" + "/" + id,
     data: JSON.stringify(datosclientes),
     success: function (data) {
       console.log(data);
@@ -584,12 +591,14 @@ function actualizarCliente() {
   funcionprueba();
 }
 
-function BorrarCliente(){
-  jQuery.ajaxSetup({async:false})
+function BorrarCliente() {
+  jQuery.ajaxSetup({
+    async: false
+  })
   let id = $("[name = 'id_cliente']").val();
   $.ajax({
     type: "DELETE",
-    url: url + "tbl_cliente" +"/" +id,
+    url: url + "tbl_cliente" + "/" + id,
     success: function (data) {
       console.log(data);
     },
@@ -605,4 +614,147 @@ funcionEnvios();
 funcionDelivery();
 funcionEmpacador();
 funcionPanadero();
-funcionPanes ();
+funcionPanes();
+
+function activarPanes() {
+  document.getElementById("panes").style.display = "block";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  //activar tablas
+  document.getElementById("tblpanes").style.display = "block";
+  document.getElementById("tblcliente").style.display = "none";
+  document.getElementById("tblpanadero").style.display = "none";
+  document.getElementById("tblempacador").style.display = "none";
+  document.getElementById("tblmotoristas").style.display = "none";
+  document.getElementById("tbldelivery").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+  funcionPanes();
+
+}
+
+function activarCliente() {
+  document.getElementById("cliente").style.display = "block";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  //activar tablas
+  document.getElementById("tblcliente").style.display = "block";
+  document.getElementById("tblpanes").style.display = "none";
+  document.getElementById("tblpanadero").style.display = "none";
+  document.getElementById("tblempacador").style.display = "none";
+  document.getElementById("tblmotoristas").style.display = "none";
+  document.getElementById("tbldelivery").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+
+
+}
+
+function activarPanadero() {
+  document.getElementById("panadero").style.display = "block";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  //activar tablas
+  document.getElementById("tblpanadero").style.display = "block";
+  document.getElementById("tblpanes").style.display = "none";
+  document.getElementById("tblcliente").style.display = "none";
+  document.getElementById("tblempacador").style.display = "none";
+  document.getElementById("tblmotoristas").style.display = "none";
+  document.getElementById("tbldelivery").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+
+
+}
+
+function activarEmpacador() {
+  document.getElementById("empacador").style.display = "block";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  document.getElementById("tblempacador").style.display = "block";
+  document.getElementById("tblpanes").style.display = "none";
+  document.getElementById("tblcliente").style.display = "none";
+  document.getElementById("tblpanadero").style.display = "none";
+  document.getElementById("tblmotoristas").style.display = "none";
+  document.getElementById("tbldelivery").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+
+}
+
+function activarMotoristas() {
+  document.getElementById("motoristas").style.display = "block";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  //activar tablas
+  document.getElementById("tblmotoristas").style.display = "block";
+  document.getElementById("tblpanes").style.display = "none";
+  document.getElementById("tblcliente").style.display = "none";
+  document.getElementById("tblempacador").style.display = "none";
+  document.getElementById("tblpanadero").style.display = "none";
+  document.getElementById("tbldelivery").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+
+}
+
+function activarEnvios() {
+  document.getElementById("envios").style.display = "block";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("pedidos").style.display = "none";
+
+  //activar tablas
+  document.getElementById("tbldelivery").style.display = "block";
+  document.getElementById("tblmotoristas").style.display = "none";
+  document.getElementById("tblpanes").style.display = "none";
+  document.getElementById("tblcliente").style.display = "none";
+  document.getElementById("tblempacador").style.display = "none";
+  document.getElementById("tblpanadero").style.display = "none";
+  document.getElementById("tblpedidos").style.display = "none";
+
+}
+
+function activarPedidos() {
+  document.getElementById("pedidos").style.display = "block";
+  document.getElementById("panes").style.display = "none";
+  document.getElementById("cliente").style.display = "none";
+  document.getElementById("panadero").style.display = "none";
+  document.getElementById("motoristas").style.display = "none";
+  document.getElementById("empacador").style.display = "none";
+  document.getElementById("envios").style.display = "none";
+
+    //activar tablas
+    document.getElementById("tbldelivery").style.display = "none";
+    document.getElementById("tblmotoristas").style.display = "none";
+    document.getElementById("tblpanes").style.display = "none";
+    document.getElementById("tblcliente").style.display = "none";
+    document.getElementById("tblempacador").style.display = "none";
+    document.getElementById("tblpanadero").style.display = "none";
+    document.getElementById("tblpedidos").style.display = "block";
+  
+
+}

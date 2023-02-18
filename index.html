@@ -12,23 +12,39 @@
 </head>
 
 <body>
-    <style>
-        div.card {
-            width: 300px;
-            height: auto;
-            margin: 15px;
-            padding: 3%;
-        }
-    </style>
-    <style>
-        button {
-            width: auto;
-            height: auto;
-            margin: 15px;
-        }
-    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" onclick="activarCliente()">Cliente</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="card">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="activarPanes()">Panes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="activarPanadero()">panadero</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="activarEmpacador()">empacador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="activarMotoristas()">motoristas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="activarEnvios()">Envios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="activarPedidos()">pedidos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="card mb-3" style="width: 22rem; " id="cliente">
         <form name="frm" onsubmit="insertarCliente(event)">
             <div class="form-group">
                 <div class="form-group">
@@ -54,7 +70,8 @@
         <button type="submit" class="btn btn-primary" onclick="actualizarCliente()">Actualizar cliente</button>
         <button type="submit" class="btn btn-danger" onclick="BorrarCliente()">borrar cliente</button>
     </div>
-    <div class="card">
+
+    <div class="card" style="display: none" id="panes">
         <form name="frm" onsubmit="insertarPanes(event)">
             <h3>Panes</h3>
             <div class="form-group">
@@ -73,7 +90,7 @@
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" style="display: none" id="empacador">
         <form name="frm" onsubmit="insertarEmpacador(event)">
             <h3>Empacadores</h3>
             <div class="form-group">
@@ -101,7 +118,7 @@
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" style="display: none" id="panadero">
         <form name="frm" onsubmit="insertarPanadero(event)">
             <h3>Panaderos</h3>
             <div class="form-group">
@@ -124,7 +141,7 @@
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" style="display: none" id="motoristas">
         <form name="frm" onsubmit="insertarDelivery(event)">
             <h3>Repartidores</h3>
             <div class="form-group">
@@ -147,7 +164,7 @@
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" style="display: none" id="envios">
         <form name="frm" onsubmit="insertarEnvios(event)">
             <h3>Envios</h3>
             <div class="form-group">
@@ -170,7 +187,7 @@
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" style="display: none" id="pedidos">
         <form name="frm" onsubmit="insertarpedidos(event)">
             <h3>pedidos</h3>
             <div class="form-group">
@@ -184,16 +201,16 @@
             </div>
             <div class="form-group">
                 <label>id del panadero</label>
-                <input type="number" class="form-control" name="id_panadero" placeholder="0501-1999-00064">
+                <input type="number" class="form-control" name="id_panadero" placeholder="4">
             </div>
             <div class="form-group">
                 <label>id del pan</label>
-                <input type="number" class="form-control" name="id_pan" placeholder="Juan">
+                <input type="number" class="form-control" name="id_pan" placeholder="2">
 
             </div>
             <div class="form-group">
                 <label>id del empacador</label>
-                <input type="number" class="form-control" name="id_empacador" placeholder="0501-1999-00064">
+                <input type="number" class="form-control" name="id_empacador" placeholder="5">
             </div>
             <div class="form-group">
                 <label>fecha de pedido</label>
@@ -204,7 +221,7 @@
         <button type="submit" class="btn btn-primary" onclick="ActualizaPedidos()">Actualizar Pedido</button>
         <button type="submit" class="btn btn-danger" onclick="BorrarPedidos()">borrar Pedido</button>
     </div>
-    <div class="table-responsive">
+    <div id="tblcliente" class="table-responsive" style="display: block">
         <br>
         <h3>lista de Clientes</h3>
         <table class="table">
@@ -220,24 +237,28 @@
                 <tbody id="cuerpo_tabla">
                 </tbody>
             </div>
-
         </table>
-        <br>
+    </div>
+
+    </table>
+    <div id="tblpanes" class="table-responsive" style="display: none">
         <h3>lista de panes</h3>
         <table class="table">
             <div>
+                <thead>
+                    <tr>
+                        <th scope="col">id pan</th>
+                        <th scope="col">tipo de pan </th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo_tabla_panes">
+                </tbody>
 
             </div>
-            <thead>
-                <tr>
-                    <th scope="col">id pan</th>
-                    <th scope="col">tipo de pan </th>
-                </tr>
-            </thead>
-            <tbody id="cuerpo_tabla_panes">
-            </tbody>
         </table>
+    </div>
 
+    <div  id="tblpanadero"class="table-responsive" style="display: none">
         <table class="table">
             <br>
             <h3>lista de panadero</h3>
@@ -252,7 +273,9 @@
 
             </tbody>
         </table>
+    </div>
 
+    <div id="tblempacador" class="table-responsive" style="display: none">
         <table class="table">
             <br>
             <h3>lista de Empacadores</h3>
@@ -268,7 +291,9 @@
 
             </tbody>
         </table>
+    </div>
 
+    <div id="tblmotoristas" class="table-responsive" style="display: none">
         <table class="table">
             <br>
             <h3>lista de Motoristas</h3>
@@ -283,8 +308,10 @@
 
             </tbody>
         </table>
+    </div>
 
 
+    <div id="tbldelivery" class="table-responsive" style="display: none">
         <table class="table">
             <br>
             <h3>lista de pedidos por delivery</h3>
@@ -299,7 +326,9 @@
 
             </tbody>
         </table>
+    </div>
 
+    <div id="tblpedidos" class="table-responsive" style="display: none">
         <table class="table">
             <br>
             <h3>lista de pedidos</h3>
@@ -317,9 +346,8 @@
 
             </tbody>
         </table>
-
-        </table>
     </div>
+
 
 
 
