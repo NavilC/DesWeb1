@@ -503,7 +503,6 @@ insertarPanes = (e) => {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  funcionPanes();
 };
 
 function actualizarPanes() {
@@ -521,7 +520,7 @@ function actualizarPanes() {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   });
-  funcionPanes();
+
 }
 
 function borrarPanes() {
@@ -535,7 +534,6 @@ function borrarPanes() {
     dataType: "json",
     contentType: "application/json; charset=utf-8",
   })
-  funcionPanes();
 }
 
 insertarCliente = (e) => {
@@ -631,7 +629,6 @@ function activarPanes() {
   document.getElementById("tblmotoristas").style.display = "none";
   document.getElementById("tbldelivery").style.display = "none";
   document.getElementById("tblpedidos").style.display = "none";
-  funcionPanes();
 
 }
 
